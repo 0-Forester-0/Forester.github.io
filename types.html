@@ -29,26 +29,25 @@
             color: goldenrod;
 
         }
-        /* Скрыть чекбокс */
+     
         #toggle {
             display: none;
         }
         .sidebar {
             position: fixed;
-            left: -250px; /* Начальное положение сайдбара за пределами экрана */
-            transition: left 0.3s ease; /* Плавный переход */
+            left: -250px; 
+            transition: left 0.3s ease; 
             width: 250px; 
             height: 100%; 
-            background-color: goldenrod; /* Цвет фона сайдбара */
-            z-index: 1000; /* Положение над остальными элементами */
+            background-color: goldenrod; 
+            z-index: 1000; 
         }
 
-        /* Изменение стиля сайдбара при активации чекбокса */
+        
         #toggle:checked + .sidebar {
-            left: 0; /* Положение сайдбара при открытии */
+            left: 0; 
         }
 
-        /* Стиль для кнопки */
         .toggle-btn {
             position: fixed;
             top: 10px;
@@ -57,12 +56,11 @@
             background: goldenrod;
             color: white;
             border: none;
-            z-index: 1100; /* Над сайдбаром */
+            z-index: 1100; 
         }
 
-        /* Фон при открытом сайдбаре */
         #toggle:checked + .sidebar + .overlay {
-            display: block; /* Показываем при активации */
+            display: block; 
         }
 
         .overlay {
@@ -71,9 +69,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-            display: none; /* Скрываем по умолчанию */
-            z-index: 500; /* Под сайдбаром */
+            background: rgba(0, 0, 0, 0.5); 
+            display: none; 
+            z-index: 500; 
         }
     </style>
     <meta http-equiv="content-type" content="text/html; "charset="UTF-8" />
@@ -98,9 +96,9 @@
     <nav class="pa0 pa0-ns">
         <a class="link dim black b f2 f-headline-ns tc db mb1 mb1-ns fnt1" href="#" title="Home">Microdata</a>
         <div class="tc pb0">
-          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="C:\Users\dimas\OneDrive\Документы\BrickTI\main.html" title="Home">Главная</a>
-          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="C:\Users\dimas\OneDrive\Документы\BrickTI\components.html" title="Store">Состав микроразметки</a>
-          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib light-yellow shadow-5" href="#" title="About">Виды микроразметки</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="index.html" title="Home">Главная</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="components.html" title="Store">Состав микроразметки</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib light-yellow shadow-5" href="types.html" title="About">Виды микроразметки</a>
           <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="#" title="Store">Способы размещения</a>
           <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" title="Contact">Contact</a>
         </div>
@@ -123,7 +121,7 @@
         </div>
         <div class="f2 fnt2 pb3">Пример разметки организации внутри HTML</div>
         <div class="f4 no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-80 shadow-5 w-50">
-            <img src="C:\Users\dimas\OneDrive\Документы\BrickTI\ex1.png">
+            <img src="img\ex1.png">
         </div>
     </div>
 </body>
