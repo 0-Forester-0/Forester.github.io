@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MicroMarkUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+    <style> 
+        body {
+            background-color: grey;
+        }
+        .hr1 {
+            background-color: goldenrod;
+            height: 5px;
+            border-width: 0;
+        }
+        .hr2 {
+            background-color: goldenrod;
+            height: 5px;
+            border-width: 0;
+        }
+        .fnt1 {
+            font-family: 'Trebuchet MS';
+            color: goldenrod;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        .fnt2 {
+            font-family: 'Trebuchet MS';
+            color: goldenrod;
+
+        }
+        
+        #toggle {
+            display: none;
+        }
+        .sidebar {
+            position: fixed;
+            left: -250px; 
+            transition: left 0.3s ease; 
+            width: 250px; 
+            height: 100%; 
+            background-color: goldenrod; 
+            z-index: 1000; 
+        }
+
+        
+        #toggle:checked + .sidebar {
+            left: 0; 
+        }
+
+        
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            background: goldenrod;
+            color: white;
+            border: none;
+            z-index: 1100; 
+        }
+
+        
+        #toggle:checked + .sidebar + .overlay {
+            display: block; 
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            display: none; 
+            z-index: 500; 
+        }
+        .divc {
+            width: 100%;
+        }
+        .fz {
+            font-size: 16px;
+        }
+        @media(min-width: 711px) {
+            .divc {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+            }
+            .fz {
+                font-size: 22px;
+            }
+        }
+        .selector {
+            background-image: url(https://steamuserimages-a.akamaihd.net/ugc/2014852210597910531/768F73B1D6E2918412163A6F0C84B4D0CEE2C8AD/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true);
+        }
+        .button {
+            border-width: 2px;
+        }
+    </style>
+    <meta http-equiv="content-type" content="text/html; "charset="UTF-8" />
+    <meta name="description" content="What is a micro mark-up" />
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <div class="sidebar" id="sidebar">
+        <nav class="mv4 pa3">
+            <ul class="list pl0">
+                <li class="mv2"><a href="About.html" class="fnt1 f2 hover-bg-purple no-underline">Об авторе</a></li>
+            </ul>
+            <hr class="hr3">
+            <ul class="f3 list pl0 ">Ссылки на докуметации 
+                <li class="mv2 pt3"><a href="https://schema.org/docs/documents.html" class="f2 fnt1 hover-bg-purple no-underline">Schema.org</a></li>
+                <li class="mv2"><a href="https://ogp.me/" class="f2 fnt1 hover-bg-purple no-underline">Open Graph</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <label for="toggle" class="toggle-btn f2 br-pill pa2 grow no-underline ba bw1 ph3 pv2 mb2 dib">»</label>
+    <div class="overlay"></div>
+
+    <nav class="pa0 pa0-ns selector">
+        <a class="link dim black b f2 f-headline-ns tc db mb1 mb1-ns fnt1" href="#" title="Home">Micromarkup</a>
+        <div class="tc pb0">
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="index.html" title="Home">Главная</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="components.html" title="Store">Состав микроразметки</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib light-yellow shadow-5" href="#" title="About">Словари</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="Syntax.html" title="Store">Синтаксис</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="schemaorg.html" title="Schema.org">Schema.org</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="opengraph.html" title="OpenGraph">OpenGraph</a>
+        </div>
+      </nav>
+    <hr class="hr1 mt0">
+    <div class="f4 fz no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-30 shadow-5 tl divc">
+        <div class="pa3 tc">
+        <div class="f2 fnt2 pb3 tc">Schema.org</div>
+        <div class="f4 fz no-underline bw2 ph3 pv2 mb3 gold tl divc">
+            Пожалуй, наиболее популярная микроразметка, которая используется 
+            для продвижения сайта. С помощью этой микроразметки можно разметить 
+            практически все элементы и блоки на сайте: отзывы, навигацию, 
+            пагинацию, товары, рейтинг, организацию, профиль и др. 
+            Популярность такой разметке пришла из-за её универсальности. 
+            Во-первых, практически любой элемент можно разметить. Во-вторых, 
+            эти элементы можно разметить синтаксисом «Микроданные» 
+            (непосредственно внутри верстки), JSON-LD (через тег "script") 
+            и «RDFA» (непосредственно внутри верстки, но отличным от типа «Микроданные»). 
+            Её разрабатывают и поддерживают Яндекс, Google, Bing и Yahoo!, чтобы вебмастерам 
+            не пришлось размечать данные для каждого поисковика отдельно.
+        </div>
+        <div class="f2 fnt2 pb3 tc">Микроразметкой Schema.org чаще всего размечают следующие элементы:</div>
+        <div class="divc fz f4">
+            <div class="overflow-auto center">
+                <table class="f5 w-100 mw8 tl" cellspacing="0">
+                <tbody class="lh-copy">
+                <tr>
+                    <td class="pa2 ph4 ba">Товары и цены в интернет-магазинах</td>
+                </tr>
+                <tr>
+                    <td class="pa2 ph4 ba">Услуги и стоимость услуг</td>
+                </tr>
+                <tr>
+                    <td class="pa2 ph4 ba">Контактную информацию</td>
+                </tr>
+                <tr>
+                    <td class="pa2 ph4 ba">Отзывы и рейтинг товаров и услуг</td>
+                </tr>
+                <tr>
+                    <td class="pa2 ph4 ba">Комментарии и оценки в статьях</td>
+                </tr>
+                <tr>
+                    <td class="pa2 ph4 ba">Вопросы и ответы</td>
+                </tr>
+                <tr>
+                    <td class="pa2 ph4 ba">Инструкции</td>
+                </tr>
+                <tr>
+                    <td class="pa2 ph4 ba">Навигационные цепочки и меню</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="f2 fnt2 tc pb3 pt4">Пример разметки организации внутри HTML</div>
+        <div class="f4 no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-80 shadow-5">
+            <img src="img\ex1.png">
+        </div>
+        <hr class="hr2 w-60 br-pill mb3">
+        <div class="f2 fnt2 tc pb3">Open Graph</div>
+        <div class="f4 fz no-underline bw2 ph3 pv2 mb3 gold tl divc">
+            Open Graph был создан для загрузки предварительной информации о ссылке, 
+            которую мы публикуем в соц. сетях или мессенджерах. 
+            Разработан специально для соцсетей компанией Facebook. С его помощью можно 
+            настроить превью, которое формируется во время репоста ссылки на сайт и передачи 
+            информации другим интернет-сервисам. Словарём Open Graph для микроразметки 
+            пользуются ВКонтакте, WhatsApp, Telegram, Viber, LinkedIn, Pinterest, Slack. <br>
+            <br>
+            Если публикуете много видео - используйте Open Graph. Видеохостинги и другие
+            сайты, которые публикуют много видео, могут использовать Open Graph для 
+            улучшения ранжирования видеороликов в сервисе Яндекс.Видео.
+            В разметке Open Graph есть специальные метатеги, с помощью которых можно 
+            передать Яндексу подробную информацию о видеоролике:
+        </div>
+        <div class="">
+            <div class="overflow-auto">
+              <table class="f5 w-100 mw8 center" cellspacing="0">
+                <thead>
+                  <tr class="bg-black-30 tc">
+                    <th class="fw6 pa2 ba">Тег</th>
+                    <th class="fw6 pa2 ba">Значение</th>
+                  </tr>
+                </thead>
+                <tbody class="lh-copy">
+                  <tr class="">
+                    <td class="pa2 ba">og:title</td>
+                    <td class="pa2 ba">название видео, здесь можно указать до 1000 символов</td>
+                  </tr>
+                  <tr class="">
+                    <td class="pa2 ba">og:url</td>
+                    <td class="pa2 ba">URL страницы с видео</td>
+                  </tr>
+                  <tr class="">
+                    <td class="pa2 ba">og:video</td>
+                    <td class="pa2 ba">путь к видеоплееру или файлу</td>
+                  </tr>
+                  <tr class="">
+                    <td class="pa2 ba">og:image</td>
+                    <td class="pa2 ba">ссылка на картинку, которая должна использоваться как заставка видео</td>
+                  </tr>
+                  <tr class="">
+                    <td class="pa2 ba">og:description</td>
+                    <td class="pa2 ba">описание ролика (от 150 до 1000 символов)</td>
+                  </tr>
+                  <tr class=""></tr>
+                    <td class="pa2 ba">ya:ovs:upload_date</td>
+                    <td class="pa2 ba">дата и время загрузки</td>
+                  </tr>
+                  <tr class=""></tr>
+                    <td class="pa2 ba">ya:ovs:adult</td>
+                    <td class="pa2 ba">в этом мета-теге нужно указать, является ли
+                        ваш ролик контентом «для взрослых». Если да, укажите 
+                        значение «true», если нет — «false»
+                    </td>
+                  </tr>
+                  <tr class=""></tr>
+                    <td class="pa2 ba">video:duration</td>
+                    <td class="pa2 ba">длительность видео (указывается в секундах с округлением до целого числа)</td>
+                  </tr>
+                  <tr class=""></tr>
+                    <td class="pa2 ba">og:type</td>
+                    <td class="pa2 ba">категория видео</td>
+                  </tr>
+                  <tr class=""></tr>
+                    <td class="pa2 ba">og:video:type</td>
+                    <td class="pa2 ba">доступные кодеки для данного формата видео</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+        <div class="f2 tc fnt2 pt3 pb3">Пример разметки организации внутри HTML</div>
+        <div class="f4 no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-80 shadow-5">
+            <img src="img\ex2.png">
+        </div>
+        </div>
+    </div>
+    <div class="flex items-center justify-center pa4">
+        <a href="components.html" class="f5 no-underline gold bg-animate hover-bg-yellow hover-black inline-flex items-center pa3 button ba border-box mr4">
+            <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
+              <title>chevronLeft icon</title>
+              <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
+            </svg>
+          <span class="pl1">Предыдущая</span>
+        </a>
+        <a href="Syntax.html" class="f5 no-underline gold bg-animate hover-bg-yellow hover-black inline-flex items-center pa3 button ba border-box">
+          <span class="pr1">Следующая</span>
+          <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+            <title>chevronRight icon</title>
+            <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+          </svg>
+        </a>
+    </div>
+    <hr class="hr1 ma0">
+    <footer class="bg-black-80 white-80 pv5 pv4-l ph4">
+        <p class="f6"><span class="dib mr4 mr5-ns">©2024 Forester Company LLC, Inc.</span>
+          <a class="link white-80 hover-light-purple" href="About.html">About |</a> 
+          <a class="no-underline white-80 hover-green" href="">foresterofficial@mail.ru</a>
+          <a class="f4 link white-80 hover-yellow ml4 ml5-ns" href="index.html">Home</a>
+        </p>
+    </footer>
+</body>
+</html>

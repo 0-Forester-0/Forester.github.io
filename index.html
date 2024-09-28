@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MicroMarkUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+    <style> 
+        body {
+            background-color: grey;
+        }
+        .hr1 {
+            background-color: goldenrod;
+            height: 5px;
+            border-width: 0;
+        }
+        .hr2 {
+            background-color: goldenrod;
+            height: 5px;
+            border-width: 0;
+        }
+        .fnt1 {
+            font-family: 'Trebuchet MS';
+            color: goldenrod;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        .fnt2 {
+            font-family: 'Trebuchet MS';
+            color: goldenrod;
+
+        }
+        
+        #toggle {
+            display: none;
+        }
+        .sidebar {
+            position: fixed;
+            left: -250px; 
+            transition: left 0.3s ease; 
+            width: 250px; 
+            height: 100%; 
+            background-color: goldenrod; 
+            z-index: 1000; 
+        }
+
+        
+        #toggle:checked + .sidebar {
+            left: 0; 
+        }
+
+        
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            background: goldenrod;
+            color: white;
+            border: none;
+            z-index: 1100; 
+        }
+
+        
+        #toggle:checked + .sidebar + .overlay {
+            display: block; 
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            display: none; 
+            z-index: 500; 
+        }
+        .movie {
+            min-width: 60%;
+            min-height: 30%;
+        }
+
+        .divc {
+            width: 100%;
+        }
+        .fz {
+            font-size: 16px;
+        }
+        @media(min-width: 711px) {
+            .divc {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+            }
+            .fz {
+                font-size: 22px;
+            }
+        }
+        .vidcont {
+            position: relative;
+            width: 100%; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden;
+        }
+        .vid {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+        }
+        .selector {
+            background-image: url(https://steamuserimages-a.akamaihd.net/ugc/2014852210597910531/768F73B1D6E2918412163A6F0C84B4D0CEE2C8AD/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true);
+        }
+        .button {
+            border-width: 2px;
+        }
+    </style>
+    <meta http-equiv="content-type" content="text/html; "charset="UTF-8" />
+    <meta name="description" content="What is a micro mark-up" />
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <div class="sidebar" id="sidebar">
+        <nav class="mv4 pa3">
+            <ul class="list pl0">
+                <li class="mv2"><a href="About.html" class="fnt1 f2 hover-bg-purple no-underline">Об авторе</a></li>
+            </ul>
+            <hr class="hr3">
+            <ul class="f3 list pl0 ">Ссылки на докуметации 
+                <li class="mv2 pt3"><a href="https://schema.org/docs/documents.html" class="f2 fnt1 hover-bg-purple no-underline">Schema.org</a></li>
+                <li class="mv2"><a href="https://ogp.me/" class="f2 fnt1 hover-bg-purple no-underline">Open Graph</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <label for="toggle" class="toggle-btn f2 br-pill pa2 grow no-underline ba bw1 ph3 pv2 mb2 dib">»</label>
+    <div class="overlay"></div>
+
+    <nav class="pa0 pa0-ns selector">
+        <a class="link dim black b f2 f-headline-ns tc db mb1 mb1-ns fnt1" href="#" title="Home">Micromarkup</a>
+        <div class="tc pb0">
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib light-yellow shadow-5" href="index.html" title="Home">Главная</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="components.html" title="Store">Состав микроразметки</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="types.html" title="About">Словари</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="Syntax.html" title="Store">Синтаксис</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="schemaorg.html" title="Schema.org">Schema.org</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="opengraph.html" title="OpenGraph">OpenGraph</a>
+        </div>
+      </nav>
+    <hr class="hr1 mt0">
+    <div class="f4 no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-30 shadow-5 w-60 divc">
+        <div class="pa3">
+            <div class="f2 fnt2 pb3">Что такое микроразметка</div>
+            <div class="fz no-underline bw2 ph3 pv2 mb3 gold tl"><b>Микроразметка</b> (семантическая разметка) — это разметка информации на сайте с помощью тегов и дополнительных атрибутов,
+                которые добавляют в HTML-код сайта.
+                Микроразметка нужна, чтобы упростить поисковым системам обработку информации,
+                размещенной на веб-страницах.
+                Благодаря разметке поисковые роботы лучше понимают
+                о чем сайт и могут предоставить  пользователю информацию в более структурированном и понятном виде.
+            </div>
+            <div class="f4 no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-80 shadow-5">
+                <img src="img\mmuEx.png">
+            </div>
+            <hr class="hr2 w-40 br-pill">
+            <div class="f2 fnt2 pb3">Что даёт микроразметка</div>
+            <ul class="fz no-underline bw2 ph3 pv2 mb3 gold tl ulc">Наличие микроразметки хорошо для всех — и для пользователей,
+                и для владельцев сайтов.<br> У сайтов с микроразметкой много преимуществ:
+                <li class="mh3 pb3 pv3">Улучшенное понимание поисковыми системами. За счёт этого пользователи быстрее находят подходящие им веб-страницы, а владельцы сайтов могут повысить рейтинг и видимость этих страниц в результатах поисковых систем.</li>
+                <li class="mh3 pb3">Расширенные результаты поиска. Фрагменты веб-страницы делают результаты поиска сайта более привлекательными. Пользователи могут видеть, насколько результат соответствует запросу, а владельцы сайтов получают больше переходов по ссылкам из поисковиков.</li>
+                <li class="mh3 pb3">Оптимизация голосового поиска. Структурированные данные помогают голосовым помощникам лучше искать подходящие сайты. Пользователи голосового поиска получают более точные результаты, а владельцы сайтов не теряют посетителей, которые пользуются таким поиском.</li>
+                <li class="mh3">Персонализация контента. С помощью микроразметки рекомендательные системы предоставляют пользователям более подходящие рекомендации контента, а владельцы сайтов получают более релевантную аудиторию.</li>
+            </ul>
+            <hr class="hr2 w-40 br-pill">
+            <div class="f2 fnt2 pb3">Немного подробнее про микроразметку</div>   
+            <div class="tc">
+                <div class="vidcont f4 no-underline br4 ba bw2 ph3 pv2 mb3 dib shadow-5">
+                    <iframe class="vid " src="https://vk.com/video_ext.php?oid=-176784723&id=456239202&hd=2&autoplay=0" 
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" 
+                    frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex items-center justify-center pa4">
+        <a href="components.html" class="f5 no-underline gold bg-animate hover-bg-yellow hover-black inline-flex items-center pa3 ba button border-box">
+          <span class="pr1">Следующая</span>
+          <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+            <title>chevronRight icon</title>
+            <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+          </svg>
+        </a>
+      </div>
+    <hr class="hr1 ma0">
+    <footer class="bg-black-80 white-80 pv5 pv4-l ph4">
+        <p class="f6"><span class="dib mr4 mr5-ns">©2024 Forester Company LLC, Inc.</span>
+          <a class="link white-80 hover-light-purple" href="About.html">About |</a> 
+          <a class="white-80 no-underline hover-green" href="">foresterofficial@mail.ru</a>
+        </p>
+    </footer>
+</body>
+</html>

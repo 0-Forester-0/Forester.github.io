@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MicroMarkUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+    <style> 
+        body {
+            background-color: grey;
+        }
+        .hr1 {
+            background-color: goldenrod;
+            height: 5px;
+            border-width: 0;
+        }
+        .hr2 {
+            background-color: goldenrod;
+            height: 5px;
+            border-width: 0;
+        }
+        .fnt1 {
+            font-family: 'Trebuchet MS';
+            color: goldenrod;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        .fnt2 {
+            font-family: 'Trebuchet MS';
+            color: goldenrod;
+
+        }
+        
+        #toggle {
+            display: none;
+        }
+        .sidebar {
+            position: fixed;
+            left: -250px; 
+            transition: left 0.3s ease; 
+            width: 250px; 
+            height: 100%; 
+            background-color: goldenrod; 
+            z-index: 1000; 
+        }
+
+        
+        #toggle:checked + .sidebar {
+            left: 0; 
+        }
+
+        
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            background: goldenrod;
+            color: white;
+            border: none;
+            z-index: 1100; 
+        }
+
+        
+        #toggle:checked + .sidebar + .overlay {
+            display: block; 
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            display: none; 
+            z-index: 500; 
+        }
+        .divc {
+            width: 100%;
+        }
+        .fz {
+            font-size: 16px;
+        }
+        @media(min-width: 711px) {
+            .divc {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+            }
+            .fz {
+                font-size: 22px;
+            }
+        }
+        .selector {
+            background-image: url(https://steamuserimages-a.akamaihd.net/ugc/2014852210597910531/768F73B1D6E2918412163A6F0C84B4D0CEE2C8AD/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true);
+        }
+        .button {
+            border-width: 2px;
+        }
+    </style>
+    <meta http-equiv="content-type" content="text/html; "charset="UTF-8" />
+    <meta name="description" content="What is a micro mark-up" />
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <div class="sidebar" id="sidebar">
+        <nav class="mv4 pa3">
+            <ul class="list pl0">
+                <li class="mv2"><a href="About.html" class="fnt1 f2 hover-bg-purple no-underline">Об авторе</a></li>
+            </ul>
+            <hr class="hr3">
+            <ul class="f3 list pl0 ">Ссылки на докуметации 
+                <li class="mv2 pt3"><a href="https://schema.org/docs/documents.html" class="f2 fnt1 hover-bg-purple no-underline">Schema.org</a></li>
+                <li class="mv2"><a href="https://ogp.me/" class="f2 fnt1 hover-bg-purple no-underline">Open Graph</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <label for="toggle" class="toggle-btn f2 br-pill pa2 grow no-underline ba bw1 ph3 pv2 mb2 dib">»</label>
+    <div class="overlay"></div>
+
+    <nav class="pa0 pa0-ns selector">
+        <a class="link dim black b f2 f-headline-ns tc db mb1 mb1-ns fnt1" href="#" title="Home">Micromarkup</a>
+        <div class="tc pb0">
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="index.html" title="Home">Главная</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 light-yellow shadow-5" href="components.html" title="Store">Состав микроразметки</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="types.html" title="About">Словари</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="Syntax.html" title="Store">Синтаксис</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="schemaorg.html" title="Contact">Schema.org</a>
+          <a class="f4 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib gold" href="opengraph.html" title="OpenGraph">OpenGraph</a>
+        </div>
+      </nav>
+    <hr class="hr1 mt0">
+    <div class="f4 no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-30 shadow-5 w-60 divc">
+        <div class="pa3">
+            <div class="f2 fnt2 tc pb3">Состав микроразметки</div>
+            <div class="mh2 tc mb3 f3 fz gold"> ❗ Каждая микроразметка состоит из <u><b>словаря</u></b> и <u><b>синтаксиса</u></b> ❗ </div>
+            <div class="tc"> 
+                <div class="f4 fz no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-30 shadow-5">
+                    <b>Словарь</b> — это набор классов и их свойств, с помощью которых <br>
+                    можно описать контент страницы. По сути, это язык, который <br>
+                    понимают алгоритмы поисковых систем. Самые распространенные <br>
+                    словари в мире — Schema.Org и OpenGraph. <br>
+        
+                    На одном сайте допускается использовать несколько словарей. <br>
+                    Дополняя друг друга, они будут передавать больше данных. <br>
+                </div>
+                <div class="f4 fz no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-black-30 shadow-5">
+                    <b>Синтаксис</b> — это набор правил для использования словаря. <br>
+                    Синтаксис определяет, как, где и какие теги указывать в HTML-коде <br>
+                    сайта. Стандартов синтаксиса, как и словарей, несколько. Наиболее <br>
+                    распространенные: JSON-LD, RDFa, микроданные и микроформаты.  <br>
+                    При этом последние три используются все реже, а JSON-LD — все чаще, <br>
+                    так как именно его рекомендует Google.
+                </div>
+            <hr class="hr2 w-40 br-pill mb3">
+            <div class="no-underline br4 ba bw2 ph3 pv2 mb3 dib gold bg-grey shadow-5">
+                <img src="img\111.png">
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex items-center justify-center pa4">
+        <a href="index.html" class="f5 no-underline gold bg-animate hover-bg-yellow hover-black inline-flex items-center pa3 button ba border-box mr4">
+            <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
+              <title>chevronLeft icon</title>
+              <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
+            </svg>
+          <span class="pl1">Предыдущая</span>
+        </a>
+        <a href="types.html" class="f5 no-underline gold bg-animate hover-bg-yellow hover-black inline-flex items-center pa3 button ba border-box">
+          <span class="pr1">Следующая</span>
+          <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+            <title>chevronRight icon</title>
+            <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+          </svg>
+        </a>
+    </div>
+    <hr class="hr1 ma0">
+    <footer class="bg-black-80 white-80 pv5 pv4-l ph4">
+        <p class="f6"><span class="dib mr4 mr5-ns">©2024 Forester Company LLC, Inc.</span>
+          <a class="link white-80 hover-light-purple" href="About.html">About |</a> 
+          <a class="no-underline white-80 hover-green" href="">foresterofficial@mail.ru</a>
+          <a class="f4 link white-80 hover-yellow ml4 ml5-ns" href="index.html">Home</a>
+        </p>
+    </footer>
+</body>
+</html>
